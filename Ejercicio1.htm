@@ -1,7 +1,7 @@
-<canvas id='tablero'  width=500 height = 450></canvas>
+<canvas id='tablero'  width=800 height = 650></canvas>
 <script>
 
-	function rectangulos(cd,colorBorde,colorRelleno,grosor){
+	function rectangulo(cd,colorBorde,colorRelleno,grosor){
 	ctx.beginPath();
 	ctx.strokeStyle = colorBorde;
 	ctx.fillStyle=colorRelleno;
@@ -14,16 +14,16 @@
 	ctx.stroke();
 	ctx.fill();
 }
-	function pentagono(cd,colorBorde,colorRelleno,grosor){
+	function pentagono(cdp,colorBorde,colorRelleno,grosor){
 	ctx.beginPath();
 	ctx.strokeStyle = colorBorde;
 	ctx.fillStyle=colorRelleno;
 	ctx.lineWidth= grosor;
-	ctx.moveTo(cd[0],cd[1]);
-	ctx.lineTo(cd[2],cd[3]);
-	ctx.lineTo(cd[4],cd[5]);
-	ctx.lineTo(cd[6],cd[7]);
-	ctx.lineTo(cd[8],cd[9])
+	ctx.moveTo(cdp[0],cdp[1]);
+	ctx.lineTo(cdp[2],cdp[3]);
+	ctx.lineTo(cdp[4],cdp[5]);
+	ctx.lineTo(cdp[6],cdp[7]);
+	ctx.lineTo(cdp[8],cdp[9])
 	ctx.closePath();
 	ctx.stroke();
 	ctx.fill();
@@ -39,5 +39,13 @@
 	var c = document.getElementById('tablero')
 	var ctx = c.getContext('2d')
 	
+	var pentagonoAzul = [344,3,149,142,222,368,465,368,540,142];
+	var pentagonoBlanco = [304,67,424,149,379,303,226,304,181,156];
+	var rectanguloVerde = [11,143,5,192,544,290,547,238];
+	var [blue, blanco, verde] = ['rgba(0,162,232)','rgba(255,255,255)','rgba(181,230,29)'];
+	
+	pentagono(pentagonoAzul,'blue',blue)
+	pentagono(pentagonoBlanco,'white', blanco)
+	rectangulo(rectanguloVerde,'green', verde)
 	
 </script>

@@ -38,7 +38,7 @@
 }
 	var c = document.getElementById('tablero')
 	var ctx = c.getContext('2d')
-	
+
 	var pentagonoAzul = [344,3,149,142,222,368,465,368,540,142];
 	var pentagonoBlanco = [304,67,424,149,379,303,226,304,181,156];
 	var rectanguloVerde = [11,143,5,192,544,290,547,238];
@@ -46,6 +46,28 @@
 	
 	pentagono(pentagonoAzul,'blue',blue)
 	pentagono(pentagonoBlanco,'white', blanco)
-	rectangulo(rectanguloVerde,'green', verde)
+	rectangulo(rectanguloVerde,'green', verde)	
+{
+       	ctx.beginPath();
+	ctx.fillStyle = 'red' 
+	ctx.arc(172,157,135,0,2*Math.PI);
+	ctx.closePath();
+	ctx.fill();
+		
+}	
+{
+	ctx.strokeStyle = blanco
+	ctx.beginPath();
+	ctx.fillStyle = blanco 
+	ctx.arc(190,180,90,0,2*Math.PI);
+	ctx.closePath();	
+	ctx.clip();
+	ctx.stroke();
+	ctx.fill();
 	
+	pentagono(pentagonoAzul,'blue',blue)
+	pentagono(pentagonoBlanco,'white', blanco)
+	rectangulo(rectanguloVerde,'green', verde)
+       	}
+		
 </script>
